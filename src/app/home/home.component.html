@@ -1,0 +1,187 @@
+<nav>
+    <div class="nav-img">
+        <img src="/./assets/images/logo.svg" alt="">
+    </div>
+    <div class="nav-list">
+        <ul>
+            <li>
+                <select name="" id="">
+                    <option value="">INR</option>
+                    <option value="">ENG</option>
+                    <option value="">ITL</option>
+                </select>
+            </li>
+            <li>
+                <i class="material-icons">account_circle</i>
+                <p>My Account</p>
+            </li>
+            <li>
+                <i class="material-icons">favorite_border</i>
+                <p>Wishlist</p>
+            </li>
+            <li>
+                <i class="fa fa-shopping-bag"></i>
+                <p>Shopping Bag</p>
+            </li>
+            <li>
+                <i class="fa fa-search"></i>
+            </li>
+            <li>
+                <i class="material-icons">menu</i>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- dynamic data -->
+<div class="slide-banner">
+    <div class="big-slider" id="big-slider">
+        <i class="material-icons" *ngFor="let icon of icons">{{icon}}</i>
+        <img src="{{image}}" alt="" *ngFor="let image of banner">
+    </div>
+
+    <div class="small-slider" id="small-slider">
+        <i class="material-icons" *ngFor="let icon of icons">{{icon}}</i>
+        <img src="{{image}}" alt="" *ngFor="let image of smallbanner">
+    </div>
+</div>
+
+<div class="outfit-div">
+    <div class="outfit-inner-div">
+        <section class="img-sec" *ngFor="let image of imgsec">
+            <div class="pink-div"></div>
+            <div class="image-overlay">
+                <img src="{{image.image}}" alt="">
+            </div>
+        </section>
+        <section class="txt-sec" *ngFor="let text of txtsec">
+            <h6>{{text.h6}}</h6>
+
+            <div class="ani-txt">
+                <div class="ani-box"></div>
+                <h1>{{text.h1}}</h1>
+            </div>
+            <p>{{text.p}}</p>
+            <div id="span-div">
+                <span *ngFor="let span of spans">{{span}}</span>
+            </div>
+            <p>{{text.p1}}</p>
+            <div class="play-btn">
+                <i class="material-icons">{{text.icon}}</i>
+                <p>{{text.p3}}</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<div class="gallery" *ngFor="let content of gallary">
+    <div class="heading">
+        <h3>{{content.h3}}</h3>
+        <h5>{{content.h5}}</h5>
+    </div>
+    <div class="images">
+        <div *ngFor="let image of gallaryImage">
+            <img src="{{image}}" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="outfit-div">
+    <div class="outfit-inner-div">
+        <section class="img-sec" *ngFor="let image of ourimg">
+            <div class="pink-div"></div>
+            <div class="image-overlay">
+                <img src="{{image.image}}" alt="">
+            </div>
+        </section>
+        <section class="txt-sec" *ngFor="let text of ourtxt">
+            <h6>{{text.h6}}</h6>
+            <h1 class="div-2-h1">{{text.h1}}</h1>
+            <p class="div-2-p">{{text.p}}</p>
+        </section>
+    </div>
+</div>
+
+<div class="gallery" *ngFor="let content of fabric">
+    <div class="heading">
+        <h3>{{content.h3}}</h3>
+        <h5>{{content.h5}}</h5>
+    </div>
+    <div class="images">
+        <div *ngFor="let image of fabricImage">
+            <img src="{{image}}" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="outfit-div">
+    <div class="outfit-inner-div">
+        <section class="img-sec" *ngFor="let image of visitimg">
+            <div class="pink-div"></div>
+            <div class="image-overlay">
+                <img src="{{image.image}}" alt="">
+            </div>
+        </section>
+        <section class="txt-sec visit-div" *ngFor="let text of visittxt">
+            <h1>{{text.h1}}</h1>
+            <h6>{{text.h6}}</h6>
+            <hr>
+            <p>{{text.p}}</p>
+            <h6>{{text.h62}}</h6>
+            <button>{{text.button}}</button>
+            <button>{{text.button2}}</button>
+        </section>
+    </div>
+</div>
+
+<div class="footer">
+    <section class="logo">
+        <img src="/./assets/images/logo.svg" alt="">
+    </section>
+    <section>
+        <h4>ADDRESS</h4>
+        <h5>6, CATHEDRAL ROAD,<br>
+            CHENNAI-600086</h5>
+    </section>
+    <section>
+        <h4>CONTACT</h4>
+        <h5>+91 89034 33000<br>
+            manyaprathaluxrr@gmail.com
+        </h5>
+    </section>
+    <section>
+        <h4>SOCIAL MEDIA</h4>
+        <i class="fa fa-facebook-f"></i>
+        <i class="fa fa-instagram"></i>
+    </section>
+</div>
+
+<div class="copy-rights">
+    <section class="pay-logos">
+        <img src="/./assets/images/maestro.svg" alt="">
+        <img src="/./assets/images/mastercard.svg" alt="">
+        <img src="/./assets/images/paypal.svg" alt="">
+        <img src="/./assets/images/paytm.svg" alt="">
+        <img src="/./assets/images/upi.svg" alt="">
+        <img src="/./assets/images/visa.svg" alt="">
+    </section>
+    <section class="copy-div">
+        <section class="content">
+            <p>© 2021 Manyapratha Luxrr. All Rights Reserved.</p>
+            <ul>
+                <li>Blogs</li>
+                <li>Shipping & Returns</li>
+                <li>Privacy Policy</li>
+                <li>Terms Of Service</li>
+                <li>About us</li>
+            </ul>
+        </section>
+    </section>
+</div>
+<div class="e-com">
+    <div class="content">
+        <p>Ecommerce website by</p>
+        <img src="/./assets/images/yourstore_logo.png" alt="">
+    </div>
+</div>
