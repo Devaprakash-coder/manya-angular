@@ -1,3 +1,24 @@
+#shop-div::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  /* Track */
+#shop-div::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+  }
+   
+  /* Handle */
+#shop-div::-webkit-scrollbar-thumb {
+    background: pink;
+    height: 50px;
+    width: 1px;
+  }
+  
+  /* Handle on hover */
+#shop-div::-webkit-scrollbar-thumb:hover {
+    background: rgb(216, 100, 119); 
+  }
+
 #model-overlay{
     position: fixed;
     background-color: #02020285;
@@ -160,6 +181,7 @@ nav{
     align-items: center;
     font-weight: 100;
     font-size: 13px;
+    cursor: pointer;
 }
 .nav-list i{
     margin-right: 5px;
@@ -643,6 +665,45 @@ nav{
 }
 
 @media (max-width:480px){
+
+    #model{
+        top: 2%;
+        width: 94%;
+        height: 96%;
+        left: 3%;
+    }
+    #model h1{
+        font-size: 18px;
+    }
+    #model h2{
+        font-size: 15px;
+    }
+    .boxes{
+        width: 90%;
+        justify-content: space-between;
+    }
+    .model-body{
+        height: 60%;
+    }
+    .model-body .box{
+        margin-right: 0;
+        width: 46%;
+    }
+    .box img{
+        width: 65%;
+    }
+    .model-body .box p{
+        font-size: 13px;
+    }
+    .model-footer{
+        height: 16%;
+    }
+    .foot-txt button{
+        width: 25%;
+    }
+    #sidebar{
+        display: none !important;
+    }
     .small-slider{
         display: block;
     }
@@ -763,6 +824,16 @@ nav{
 }
 
 @media (min-width: 480px) and (max-width: 991px){
+    #sidebar{
+        display: none !important;
+    }
+
+    #model{
+        width: 70%;
+    }
+    .model-body .box{
+        width: 43%;
+    }
     nav{
         width: 100%;
         height: 15%;
@@ -817,6 +888,9 @@ nav{
     }
     .txt-sec h1{
         font-size: 25px;
+    }
+    .play-btn{
+        width: 45%;
     }
     .play-btn::before {
         left: -5px;
