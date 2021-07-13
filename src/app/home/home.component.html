@@ -27,12 +27,44 @@
                 <i class="fa fa-search"></i>
             </li>
             <li>
-                <i class="material-icons">menu</i>
+                <i (click)="sidebarOpen()" class="material-icons">menu</i>
             </li>
         </ul>
     </div>
 </nav>
-
+<div id="sidebar">
+    <ul>
+        <li (click)="shopDiv()">Shop
+            <div id="shop-div">
+                <ul>
+                    <h2>READYMADES</h2>
+                    <li>Shirts</li>
+                    <li>Trousers</li>
+                    <li>Contemporary Suits</li>
+                    <li>Tuxedo Suits</li>
+                    <li>Bundis</li>
+                    <li>Bandhgala Suits</li>
+                    <li>Sherwani</li>
+                </ul>
+                <ul>
+                    <h2>TAILORED</h2>
+                    <li>Shirt Fabrics</li>
+                    <li>Trouser Fabrics</li>
+                    <li>Contemporary Suit Fabrics</li>
+                    <li>Tuxedo Suit Fabrics</li>
+                    <li>Waistcoat Fabrics</li>
+                    <li>Kurta Fabrics</li>
+                    <li>Bundi Fabrics</li>
+                    <li>Bandhgala Suit Fabrics</li>
+                    <li>Sherwani Fabrics</li>
+                </ul>
+            </div>
+        </li>
+        <li>Gift Cards</li>
+        <li>AI STYLING ASSISTANT</li>
+        <li (click)="sidebarClose()" class="material-icons close">close</li>
+    </ul>
+</div>
 <!-- dynamic data -->
 <div class="slide-banner">
     <div class="big-slider" id="big-slider">
@@ -66,14 +98,245 @@
                 <span *ngFor="let span of spans">{{span}}</span>
             </div>
             <p>{{text.p1}}</p>
-            <div class="play-btn">
+            <div class="play-btn" (click)="model()">
                 <i class="material-icons">{{text.icon}}</i>
                 <p>{{text.p3}}</p>
             </div>
         </section>
     </div>
+
 </div>
 
+<!-- model -->
+<div id="model-overlay">
+    <div id="model">
+        <div class="model-nav">
+            <div>
+                <h1>AI STYLING ASSISTANT</h1>
+                <h3>Tell us about yourself</h3>
+            </div>
+            <div>
+                <h2 (click)="modelClose()">CLOSE</h2>
+            </div>
+        </div>
+        <div class="change">
+            <div class="model-heading">
+                <h1>What kind of person are you?</h1>
+                <h3>Select one option</h3>
+            </div>
+            <div class="model-body">
+                <div class="boxes">
+                    <div class="box">
+                        <input type="radio" name="radio-1" id="" checked>
+                        <img src="/./assets/images/batman.webp" alt="">
+                        <h4>Calm</h4>
+                        <p>Small Words | Small Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-1" id="">
+                        <img src="/./assets/images/ironman.jpeg" alt="">
+                        <h4>Conversational</h4>
+                        <p>Big Words | Small Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-1" id="">
+                        <img src="/./assets/images/spider.jpeg" alt="">
+                        <h4>Sharp</h4>
+                        <p>Small Words | Big Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-1" id="">
+                        <img src="/./assets/images/hulk.jpeg" alt="">
+                        <h4>Bold</h4>
+                        <p>Big Words | Big Deeds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <div class="foot-txt end">
+                    <button (click)="next()">NEXT</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="change">
+            <div class="model-heading">
+                <h1>What are you shopping for?</h1>
+                <h3>Select one option</h3>
+            </div>
+            <div class="model-body">
+                <div class="boxes">
+                    <div class="box">
+                        <input type="radio" name="radio-2" id="sofa" checked>
+                        <img src="/./assets/images/sofa.jpeg" alt="">
+                        <h4>Something Casual</h4>
+                        <p>Comfortable, everyday wear</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-2" id="case">
+                        <img src="/./assets/images/case.jpeg" alt="">
+                        <h4>Business</h4>
+                        <p>Professional, formal wear</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-2" id="">
+                        <img src="/./assets/images/rocket.jpeg" alt="">
+                        <h4>Festival</h4>
+                        <p>Trendy, ethnic wear</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-2" id="">
+                        <img src="/./assets/images/cake.jpeg" alt="">
+                        <h4>Wedding</h4>
+                        <p>Dressy, formal wear</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-2" id="">
+                        <img src="/./assets/images/papper.jpeg" alt="">
+                        <h4>Farewell Party</h4>
+                        <p>Striking, formal wear</p>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <div class="foot-txt">
+                    <button (click)="prev()">Previous</button>
+                    <button (click)="next()">NEXT</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="change">
+            <div class="model-heading">
+                <h1>Where will you wear your outfit?</h1>
+                <h3>Select multiple options</h3>
+            </div>
+            <div class="model-body">
+                <div class="boxes">
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/ballon.jpeg" alt="">
+                        <h4>Calm</h4>
+                        <p>Small Words | Small Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/juice.jpeg" alt="">
+                        <h4>Conversational</h4>
+                        <p>Big Words | Small Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/flight.jpeg" alt="">
+                        <h4>Sharp</h4>
+                        <p>Small Words | Big Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/tree.jpeg" alt="">
+                        <h4>Bold</h4>
+                        <p>Big Words | Big Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/table.jpeg" alt="">
+                        <h4>Bold</h4>
+                        <p>Big Words | Big Deeds</p>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/case.jpeg" alt="">
+                        <h4>Bold</h4>
+                        <p>Big Words | Big Deeds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <div class="foot-txt">
+                    <button (click)="prev()">Previous</button>
+                    <button (click)="next()">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="change">
+            <div class="model-heading">
+                <h1>What is your colour preference like?</h1>
+                <h3>Select multiple options</h3>
+            </div>
+            <div class="model-body">
+                <div class="boxes">
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/light.jpeg" alt="">
+                        <h4>Light</h4>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/dark.jpeg" alt="">
+                        <h4>Dark</h4>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/cool.jpeg" alt="">
+                        <h4>Cool</h4>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/warm.jpeg" alt="">
+                        <h4>Warm</h4>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/soft.jpeg" alt="">
+                        <h4>Soft</h4>
+                    </div>
+                    <div class="box">
+                        <input type="checkbox" name="" id="">
+                        <img src="/./assets/images/deep.jpeg" alt="">
+                        <h4>Deep</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <div class="foot-txt">
+                    <button (click)="prev()">Previous</button>
+                    <button (click)="next()">Next</button>
+                </div>
+            </div>
+        </div>
+
+      <div class="change">
+            <div class="model-heading">
+                <h1>Do you prefer readymade clothes or stitched clothes?</h1>
+                <h3>Select one option</h3>
+            </div>
+            <div class="model-body">
+                <div class="boxes">
+                    <div class="box">
+                        <input type="radio" name="radio-3" id="">
+                        <img src="/./assets/images/readymade.jpg" alt="">
+                        <h4>Readymade</h4>
+                        <p>Off-the-shelf products at standard sizing...</p>
+                    </div>
+                    <div class="box">
+                        <input type="radio" name="radio-3" id="">
+                        <img src="/./assets/images/stiched.jpg" alt="">
+                        <h4>Stitched</h4>
+                        <p>Bespoke products with custom measurements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="model-footer">
+                <div class="foot-txt">
+                    <button (click)="prev()">Previous</button>
+                    <button (click)="modelClose()">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 <div class="gallery" *ngFor="let content of gallary">
     <div class="heading">
         <h3>{{content.h3}}</h3>

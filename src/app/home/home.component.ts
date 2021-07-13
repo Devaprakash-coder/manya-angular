@@ -43,7 +43,64 @@ export class HomeComponent implements OnInit {
     this.slider();
     this.smallSlider();
     this.spanslide();
+    this.next();
   }
+sidebarOpen(){
+  const sidebar = document.getElementById("sidebar")!;
+  sidebar.style.display = "flex";
+}
+sidebarClose(){
+  const sidebar = document.getElementById("sidebar")!;
+  sidebar.style.display = "none";
+}
+shopDiv(){
+  const shoplist = document.getElementById("shop-div")!;
+  shoplist.style.display = "flex";
+}
+  model(){
+   const $model = document.getElementById("model-overlay")!;
+   $model.style.visibility = "visible";
+  }
+  modelClose(){
+    const $model = document.getElementById("model-overlay")!;
+    $model.style.visibility = "hidden";
+   }
+  //  modelnext(){
+  //   const change = document.getElementById("model")!;
+  //   const next = (change.getElementsByClassName("change") as HTMLCollectionOf<HTMLElement>);
+  //   for (let index = 0; index < next.length; index++) {
+  //     next[index].style.display = "none"; 
+  //   }
+  //   next[0].style.display = "block";
+  //  }
+  nextIndex = 0;
+next(){
+  const change = document.getElementById("model")!;
+  const next = (change.getElementsByClassName("change") as HTMLCollectionOf<HTMLElement>);
+  for (let index = 0; index < next.length; index++) {
+    next[index].style.display = "none"; 
+  }
+  if (this.nextIndex > next.length -1) {
+    this.nextIndex = 0;
+  }
+  next[this.nextIndex].style.display = "block"; 
+  this.nextIndex++;
+  console.log('next',this.nextIndex);
+ }
+ 
+ prev(){
+  const change = document.getElementById("model")!;
+  const next = (change.getElementsByClassName("change") as HTMLCollectionOf<HTMLElement>);
+  for (let index = 0; index < next.length; index++) {
+    next[index].style.display = "none"; 
+  }
+  if (this.nextIndex < 0) {
+    this.nextIndex = 1;
+  }
+  this.nextIndex--;
+  next[this.nextIndex].style.display = "block"; 
+  console.log('prev',this.nextIndex);
+ }
 
   indexValue = 0;
 
